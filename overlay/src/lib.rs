@@ -176,8 +176,8 @@ mod tests {
         assert!(dir.is_dir());
         assert!(dir.exists());
         let file = directory.create_file_for_write("233/2333/233333.zip").unwrap();
+        file.commit().unwrap();
         let file_path = tmp_dir.path().join("test/233/2333/233333.zip");
         assert!(file_path.exists());
-        file.commit().unwrap();
     }
 }
